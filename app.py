@@ -5,7 +5,7 @@ import streamlit as st
 
 
 
-os.environ['OPENAI_API_KEY'] = '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'
+os.environ['OPENAI_API_KEY'] = 'KPI-KEY'
 llm = OpenAI(temperature=0.9)
 prompt = st.text_input('蘆竹二廠GPT')
 
