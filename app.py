@@ -13,7 +13,7 @@ prompt = st.text_input('士桓AI哥在此')
 
 if prompt:
 
-    response = openai.ChatCompletion.create(
+    response = openai.chat.completions.create(
         model=  'gpt-4-1106-preview', #'gpt-3.5-turbo-instruct', #'text-davinci-003',
         temperature=0.7,
         messages=[
