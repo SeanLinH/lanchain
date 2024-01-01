@@ -1,19 +1,19 @@
 import os 
-from langchain.llms import OpenAI
+# from langchain.llms import OpenAI
 import streamlit as st
 import openai
+from openai import OpenAI
 # from langchain.llms.utils. import PyPDFLoader
 
 
 
 # os.environ['OPENAI_API_KEY'] = 'KPI-KEY'
-openai.api_key = os.getenv('KPI-KEY')
-# llm = OpenAI(temperature=0.7)
+# openai.api_key = os.getenv('API_KEY')
+client = OpenAI(api_key=os.getenv('API_KEY'))
 prompt = st.text_input('士桓AI哥在此')
 
 if prompt:
-
-    response = openai.chat.completions.create(
+    response = client.chat.completions.create(
         model=  'gpt-4-1106-preview', #'gpt-3.5-turbo-instruct', #'text-davinci-003',
         temperature=0.7,
         messages=[
@@ -32,10 +32,6 @@ if prompt:
             }  
         ]
     )
-    reply_msg = response["choices"][0]['message']['content']
+    reply_msg = response.choices[0].message.content
 
-    # response = llm(prompt)
     st.write(reply_msg)
-
-
-
