@@ -1,5 +1,7 @@
 from anthropic import AsyncAnthropic, HUMAN_PROMPT, AI_PROMPT
 from dotenv import load_dotenv
+from typing import Optional
+from fastapi import FastAPI, Form
 import os 
 import streamlit as st
 import asyncio
@@ -10,9 +12,6 @@ anthropic = AsyncAnthropic(
     # defaults to os.environ.get("ANTHROPIC_API_KEY")
     api_key=os.getenv("API_CLAUD"),
 )
-
-
-
 
 
 async def generate_text(x):
@@ -39,3 +38,4 @@ prompt = st.text_input('士桓AI哥在此')
 
 if prompt:
     asyncio.run(generate_text(prompt))
+
