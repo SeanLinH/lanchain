@@ -13,7 +13,7 @@ anthropic = AsyncAnthropic(
 
 
 
-#######
+
 
 async def generate_text(x):
     container = st.empty()
@@ -31,14 +31,11 @@ async def generate_text(x):
         new_char = completion.completion
         text += new_char
         container.text(text)
-        asyncio.sleep(0.1)  # 等待一小段時間
+        asyncio.sleep(0.1)  
         # print(completion.completion, end="", flush=True)
 
 prompt = st.text_input('士桓AI哥在此')
 
-# Streamlit 按鈕來控制生成
-# if st.button('Start Generation'):
-#     asyncio.run(generate_text())
 
 if prompt:
     asyncio.run(generate_text(prompt))
