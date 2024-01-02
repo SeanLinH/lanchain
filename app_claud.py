@@ -14,12 +14,11 @@ anthropic = AsyncAnthropic(
 
 async def generate_text(x):
     container = st.empty()
-    ai_prompt = "You are a professional AI expert. If I ask you question related to math, AI, DS, DL, ML, you can answer them from a professional perspective and give me career interview suggestions. You can choose to search online to get more accurate information.  If you feel that the question I asked may not be so important, or there are other more important questions that I may not understand, you can try to guide me to further understand the relevant technical knowledge."
     text = ""
     stream = await anthropic.completions.create(
         model="claude-2.1",
         max_tokens_to_sample=300,
-        prompt=f"{HUMAN_PROMPT} {x} {AI_PROMPT} {ai_prompt}",
+        prompt=f"{HUMAN_PROMPT} {x} {AI_PROMPT}",
         stream=True,
         temperature=0.9,
     )
