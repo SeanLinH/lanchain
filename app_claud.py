@@ -1,7 +1,5 @@
 from anthropic import AsyncAnthropic, HUMAN_PROMPT, AI_PROMPT
 from dotenv import load_dotenv
-from typing import Optional
-from fastapi import FastAPI, Form
 import os 
 import streamlit as st
 import asyncio
