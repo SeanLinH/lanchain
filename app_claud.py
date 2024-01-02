@@ -8,7 +8,7 @@ load_dotenv()
 
 anthropic = AsyncAnthropic(
     # defaults to os.environ.get("ANTHROPIC_API_KEY")
-    api_key=os.getenv("API_CLAUD"),
+    api_key=os.getenv("ANTHROPIC_API_KEY"),
 )
 
 
