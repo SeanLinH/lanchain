@@ -17,7 +17,7 @@ async def generate_text(x):
     text = ""
     stream = await anthropic.completions.create(
         model="claude-2.1",
-        max_tokens_to_sample=300,
+        max_tokens_to_sample=512,
         prompt=f"{HUMAN_PROMPT} {x} {AI_PROMPT}",
         stream=True,
         temperature=0.9,
