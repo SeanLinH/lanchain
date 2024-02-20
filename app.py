@@ -10,7 +10,7 @@ load_dotenv()
 
 # os.environ['OPENAI_API_KEY'] = 'KPI-KEY'
 # openai.api_key = os.getenv('API_KEY')
-client = OpenAI(api_key=os.getenv('API_KEY'))
+client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 prompt = st.text_input('士桓AI哥在此')
 
 
